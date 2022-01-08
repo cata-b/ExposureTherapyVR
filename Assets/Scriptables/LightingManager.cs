@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
@@ -19,7 +16,7 @@ public class LightingManager : MonoBehaviour
             sun = RenderSettings.sun;
         else
         {
-            var lights = GameObject.FindObjectsOfType<Light>();
+            var lights = FindObjectsOfType<Light>();
             foreach (var l in lights)
             {
                 if (l.type != LightType.Directional) continue;
@@ -38,6 +35,9 @@ public class LightingManager : MonoBehaviour
             sun.color = lightingPreset.directionalColor.Evaluate(time01);
             sun.transform.localRotation = Quaternion.Euler(new Vector3(time01 * 360.0f - 90.0f, 170.0f, 0));
         }
+        
+        foreach (var timeOfDayListener in FindObjectsOfType<TimeOfDayListener>())
+            timeOfDayListener.UpdateTime(time01);
     }
     
     // Update is called once per frame

@@ -27,6 +27,8 @@ namespace DefaultNamespace
             
             characterController.Move(movement * Time.deltaTime);
             
+            // characterController.
+            
             if (!characterController.isGrounded)
                 _verticalVelocity += gravity * Time.deltaTime;
             else

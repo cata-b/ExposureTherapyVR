@@ -5,25 +5,37 @@ public class TorchSwitch : MonoBehaviour
 {
     [SerializeField] private bool on;
 
-    private ParticleSystem[] torchFires;
-    private Light[] torchLights;
+    private ParticleSystem[] _torchFires;
+    private Light[] _torchLights;
+    private AudioSource[] _torchSounds;
 
     private void Start()
     {
-        torchFires = GetComponentsInChildren<ParticleSystem>();
-        torchLights = GetComponentsInChildren<Light>();
+        _torchFires = GetComponentsInChildren<ParticleSystem>();
+        _torchLights = GetComponentsInChildren<Light>();
+        _torchSounds = GetComponentsInChildren<AudioSource>();
         UpdateTorches();
     }
-    
+
     private void UpdateTorches()
     {
         if (on)
-            foreach (var fire in torchFires)
+        {
+            foreach (var fire in _torchFires)
                 fire.Play();
+            if (Application.isPlaying)
+                foreach (var sound in _torchSounds)
+                    sound.Play();
+        }
         else
-            foreach (var fire in torchFires)
+        {
+            foreach (var fire in _torchFires)
                 fire.Stop();
-        foreach (var torchLight in torchLights)
+            foreach (var sound in _torchSounds)
+                sound.Stop();
+        }
+
+        foreach (var torchLight in _torchLights)
             torchLight.enabled = on;
     }
 
@@ -35,6 +47,12 @@ public class TorchSwitch : MonoBehaviour
             on = !on;
             UpdateTorches();
         }
-        else UpdateTorches();
+        else
+        {
+            _torchFires = GetComponentsInChildren<ParticleSystem>();
+            _torchLights = GetComponentsInChildren<Light>();
+            _torchSounds = GetComponentsInChildren<AudioSource>();
+            UpdateTorches();
+        }
     }
 }

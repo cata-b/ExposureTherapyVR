@@ -4,17 +4,18 @@ public class LookAround : MonoBehaviour
 {
     [SerializeField] private Transform playerBody;
     [SerializeField] private float sensitivity;
-    private float _yRotation = 0.0f;
+    private float _yRotation;
     
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        _yRotation = transform.rotation.y;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         var mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         var mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;

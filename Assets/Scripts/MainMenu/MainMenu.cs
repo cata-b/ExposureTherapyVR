@@ -37,4 +37,5 @@ public class MainMenu : MonoBehaviour
 
     public void OnHouseButtonClicked() => LoadScene("Scenes/HouseScene");
     public void OnForestButtonClicked() => LoadScene("Scenes/ForestScene");
+    public void OnParkingLotButtonClicked() => LoadScene("Scenes/ParkingLotScene");
 }

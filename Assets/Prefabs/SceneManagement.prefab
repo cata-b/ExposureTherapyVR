@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2782739765444787816}
   - component: {fileID: 2782739765444787831}
+  - component: {fileID: 7843569592522165176}
   m_Layer: 0
   m_Name: SceneManagement
   m_TagString: Untagged
@@ -47,3 +48,16 @@ MonoBehaviour:
   lightControlSpeed: 100
   sun: {fileID: 0}
   timeOfDay: 15.2
+  startupTimeOfDay: 0
+--- !u!114 &7843569592522165176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782739765444787830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e51b5b5f98847548cc3126bffeb4451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

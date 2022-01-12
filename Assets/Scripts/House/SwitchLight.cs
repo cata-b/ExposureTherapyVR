@@ -11,7 +11,7 @@ public class SwitchLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && inside)
+        if (Input.GetButtonDown("SwitchLights") && inside)
         {
             light.enabled = !light.enabled;
             var rotation = switchObject.transform.rotation.eulerAngles;

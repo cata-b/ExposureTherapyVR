@@ -20022,6 +20022,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2018592242035528122, guid: ef8a11d946290e3489846cbfde8b42a8, type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018592242035528122, guid: ef8a11d946290e3489846cbfde8b42a8, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6725085476285334776, guid: ef8a11d946290e3489846cbfde8b42a8, type: 3}
       propertyPath: m_RootOrder
       value: 1

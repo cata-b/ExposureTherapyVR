@@ -7,6 +7,13 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private float lightControlSpeed = 100;
     [SerializeField] private Light sun;
     [SerializeField, Range(0, 24)] private float timeOfDay;
+    [SerializeField, Range(0, 24)] private float startupTimeOfDay;
+
+    private void Start()
+    {
+        if (Application.isPlaying)
+            timeOfDay = startupTimeOfDay;
+    }
 
     private void OnValidate()
     {
@@ -48,7 +55,10 @@ public class LightingManager : MonoBehaviour
         if (Application.isPlaying)
         {
             timeOfDay += Input.GetAxis("Mouse ScrollWheel") * lightControlSpeed * Time.deltaTime;
+                
             timeOfDay %= 24;
+            if (timeOfDay < 0)
+                timeOfDay += 24;
         }
         UpdateLighting(timeOfDay / 24);
     }

@@ -18225,6 +18225,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2782739765444787831, guid: a3829b5c02d8c4d419916d4a514f6355, type: 3}
+      propertyPath: startupTimeOfDay
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2782739765444787831, guid: a3829b5c02d8c4d419916d4a514f6355, type: 3}
       propertyPath: lightControlSpeed
       value: 200
       objectReference: {fileID: 0}
